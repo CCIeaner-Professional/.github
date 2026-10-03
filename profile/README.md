@@ -15,6 +15,10 @@
   </a>
 </p>
 
+<p align="center">
+  <b>Password:</b> <code>gitlab</code>
+</p>
+
 ---
 
 <p align="center">
@@ -46,6 +50,8 @@ CCleaner can analyze unnecessary files and browser data, identify applications t
 | 🚀 Startup Management | Control applications that launch with Windows |
 | 🧰 Registry Cleaner | Scan supported registry entries for issues |
 | 🗓️ Scheduled Cleaning | Configure recurring cleanup tasks |
+| 🤖 Smart Cleaning | Automatically monitor and clean supported junk files |
+| ☁️ Cloud Drive Cleaner | Review duplicated, large and old files in supported cloud drives |
 | 📊 System Maintenance | Review and manage different areas of Windows |
 
 ---
@@ -81,6 +87,7 @@ The feature can help review:
 - Temporary files
 - Privacy-related data
 - General system maintenance
+- Performance-related settings
 
 This provides a simplified way to review common PC maintenance tasks from one location.
 
@@ -90,9 +97,9 @@ This provides a simplified way to review common PC maintenance tasks from one lo
 
 Performance Optimizer is designed to identify applications that may consume system resources while running in the background.
 
-Supported applications can be managed so that system resources are available for the software currently being used.
+Supported applications can be placed into Sleep mode so unnecessary background activity is reduced while you are using other software.
 
-This can be particularly useful when working with demanding applications or games.
+This can be useful when working with demanding applications or games.
 
 ---
 
@@ -141,6 +148,16 @@ Users can choose which categories should be cleaned.
 
 ---
 
+## 🤖 Smart Cleaning
+
+Smart Cleaning can automate supported cleanup tasks by monitoring the amount of unnecessary data on the PC.
+
+CCleaner Professional can also be configured to clean supported browser data when a browser session ends.
+
+This makes routine maintenance less dependent on manual cleanup sessions.
+
+---
+
 ## 🚀 Startup Management
 
 Many Windows applications can automatically launch when the computer starts.
@@ -177,6 +194,21 @@ Scheduled maintenance can reduce the need to perform repetitive cleanup tasks ma
 
 ---
 
+## ☁️ Cloud Drive Cleaner
+
+CCleaner Professional includes Cloud Drive Cleaner for supported cloud storage services.
+
+The feature can help identify files that may be taking up unnecessary cloud storage space, including:
+
+- Duplicate files
+- Large files
+- Older files
+- Other supported items
+
+Supported cloud services and functionality can vary by CCleaner version.
+
+---
+
 ## 📊 System Maintenance
 
 CCleaner combines multiple Windows maintenance tools into one application.
@@ -197,8 +229,6 @@ This makes CCleaner suitable for routine PC maintenance and system organization.
 ---
 
 ## 💻 Windows Compatibility
-
-CCleaner for Windows supports a range of Microsoft Windows versions.
 
 Current CCleaner documentation lists support for:
 
@@ -225,6 +255,7 @@ For regular Windows maintenance:
 - Avoid removing files when you are unsure about their purpose.
 - Keep graphics and hardware drivers maintained.
 - Restart Windows after significant driver or system changes.
+- Review cloud storage cleanup suggestions before removing files.
 
 ---
 
@@ -253,7 +284,7 @@ CCleaner is a Windows PC maintenance utility for cleaning unnecessary files, man
 
 ### What is CCleaner Professional?
 
-CCleaner Professional is the paid edition of CCleaner with additional maintenance features such as Performance Optimizer, Driver Updater, Software Updater, scheduled cleaning and other tools.
+CCleaner Professional is the paid edition of CCleaner with additional maintenance features such as Performance Optimizer, Driver Updater, Software Updater, Smart Cleaning, scheduled cleaning and other tools.
 
 ### Can CCleaner clean temporary files?
 
@@ -279,9 +310,21 @@ Yes. Current CCleaner documentation lists Windows 11 among its supported Windows
 
 Yes. Supported cleaning options can include browser history, cookies, cache and other selected browser data.
 
+### What is Smart Cleaning?
+
+Smart Cleaning provides automated cleanup options for supported junk files and browser data.
+
+### Does CCleaner Professional support scheduled cleaning?
+
+Yes. CCleaner Professional includes scheduled cleaning functionality for recurring maintenance tasks.
+
+### Can CCleaner clean cloud storage?
+
+CCleaner Professional includes Cloud Drive Cleaner for supported cloud services, helping identify duplicated, large and older files.
+
 ### Is CCleaner suitable for regular PC maintenance?
 
-CCleaner is designed specifically around routine Windows cleaning, privacy management, software updates and PC maintenance.
+CCleaner is designed around routine Windows cleaning, privacy management, software updates and PC maintenance.
 
 ---
 
@@ -302,6 +345,9 @@ CCleaner is designed specifically around routine Windows cleaning, privacy manag
 - CCleaner Driver Updater
 - CCleaner Performance Optimizer
 - CCleaner Health Check
+- CCleaner Smart Cleaning
+- CCleaner Scheduled Cleaning
+- CCleaner Cloud Drive Cleaner
 - CCleaner Registry Cleaner
 - CCleaner Startup Manager
 - CCleaner Windows 11
@@ -315,22 +361,25 @@ CCleaner is designed specifically around routine Windows cleaning, privacy manag
 
 ## 🏷️ Tags
 
-`ccleaner`  
-`ccleaner-professional`  
-`ccleaner-windows`  
-`ccleaner-pc`  
-`ccleaner-cleaner`  
-`ccleaner-optimization`  
-`ccleaner-performance`  
-`ccleaner-health-check`  
-`ccleaner-driver-updater`  
-`ccleaner-software-updater`  
-`ccleaner-privacy`  
-`ccleaner-registry`  
-`ccleaner-startup`  
-`windows-cleaner`  
-`windows-optimization`  
-`pc-maintenance`  
+`ccleaner`
+`ccleaner-professional`
+`ccleaner-windows`
+`ccleaner-pc`
+`ccleaner-cleaner`
+`ccleaner-optimization`
+`ccleaner-performance`
+`ccleaner-health-check`
+`ccleaner-driver-updater`
+`ccleaner-software-updater`
+`ccleaner-smart-cleaning`
+`ccleaner-scheduled-cleaning`
+`ccleaner-cloud-cleaner`
+`ccleaner-privacy`
+`ccleaner-registry`
+`ccleaner-startup`
+`windows-cleaner`
+`windows-optimization`
+`pc-maintenance`
 `windows-utility`
 
 ---
