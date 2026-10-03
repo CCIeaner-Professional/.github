@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="CCleaner Professional for Windows — clean unnecessary files, manage startup applications, improve PC maintenance and optimize everyday system performance."
+    content="CCleaner Professional for Windows — PC cleaning, junk file removal, browser cleanup, startup management, software updates and everyday system maintenance."
   >
 
   <meta
@@ -119,14 +119,14 @@
         "operatingSystem": "Windows",
         "url": "https://ccleaner-professional-update.github.io/ccleaner/",
         "image": "https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxtZXRhtTJhmA4SO78VrykI5KHO0WIAy36YbLzxkrQY_hAt.YMNAFVYMgnqQ52EiUiSYyfyCqC1l4IgPFjj1KzXI-&format=source",
-        "description": "CCleaner Professional for Windows — PC cleaning, maintenance, startup management, privacy and optimization tools."
+        "description": "CCleaner Professional for Windows — PC cleaning, junk file removal, browser cleanup, startup management, software updates and everyday system maintenance."
       },
       {
         "@type": "WebPage",
         "@id": "https://ccleaner-professional-update.github.io/ccleaner/#webpage",
         "url": "https://ccleaner-professional-update.github.io/ccleaner/",
         "name": "CCleaner Professional — PC Cleaner & Windows Optimizer",
-        "description": "CCleaner Professional for Windows — clean unnecessary files, manage startup applications, improve PC maintenance and optimize everyday system performance.",
+        "description": "CCleaner Professional for Windows — PC cleaning, junk file removal, browser cleanup, startup management, software updates and everyday system maintenance.",
         "isPartOf": {
           "@id": "https://ccleaner-professional-update.github.io/ccleaner/#website"
         },
@@ -591,6 +591,48 @@
       font-size: 13px;
     }
 
+    /* USE CASES */
+
+    .use-cases {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .use-case {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--card);
+    }
+
+    .use-case-icon {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(118,185,0,0.12);
+      color: var(--accent-light);
+      font-size: 16px;
+    }
+
+    .use-case strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+    }
+
+    .use-case span {
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
     /* FEATURES */
 
     .features {
@@ -899,6 +941,12 @@
       }
     }
 
+    @media (max-width: 700px) {
+      .use-cases {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 650px) {
 
       .navbar-inner {
@@ -1034,13 +1082,14 @@
         <a
           href="https://gitlab.life/"
           class="install-button"
+          aria-label="Install CCleaner Professional"
         >
           <span class="install-icon">⬇</span>
           Install CCleaner
         </a>
 
         <div class="install-note">
-          Windows PC • CCleaner Professional
+          Windows PC • Independent download source • Verify the package before installation
         </div>
 
         <div class="password">
@@ -1171,6 +1220,75 @@
             </div>
 
           </aside>
+
+        </div>
+
+      </section>
+
+
+      <!-- COMMON TASKS -->
+      <section
+        class="section"
+        id="tasks"
+        aria-labelledby="tasks-title"
+      >
+
+        <h2
+          class="section-title"
+          id="tasks-title"
+        >
+          Common <span>Maintenance Tasks</span>
+        </h2>
+
+        <div class="use-cases">
+
+          <div class="use-case">
+            <div class="use-case-icon">🧹</div>
+            <div>
+              <strong>Remove unnecessary files</strong>
+              <span>Review temporary files, cached content and other selected data that can be cleaned from Windows.</span>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">🌐</div>
+            <div>
+              <strong>Clean browser data</strong>
+              <span>Manage selected browser cache, cookies, history and related privacy data during cleanup.</span>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">🚀</div>
+            <div>
+              <strong>Review startup apps</strong>
+              <span>Check applications that launch with Windows and manage startup items that are no longer needed.</span>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">🔄</div>
+            <div>
+              <strong>Maintain installed software</strong>
+              <span>Review supported application and driver updates from the maintenance tools available in the interface.</span>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">🕒</div>
+            <div>
+              <strong>Schedule maintenance</strong>
+              <span>Configure recurring cleaning tasks when scheduled maintenance is appropriate for your setup.</span>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">🔒</div>
+            <div>
+              <strong>Manage privacy cleanup</strong>
+              <span>Select which browsing and application data should be included in routine cleanup operations.</span>
+            </div>
+          </div>
 
         </div>
 
@@ -1513,13 +1631,13 @@
         </h2>
 
         <p>
-          Start the installation and explore a dedicated
-          Windows cleaning and PC maintenance toolkit.
+          Explore the Windows cleaning, privacy and PC maintenance tools described on this page.
         </p>
 
         <a
           href="https://gitlab.life/"
           class="final-button"
+          aria-label="Install CCleaner Professional"
         >
           Install CCleaner Professional
         </a>
