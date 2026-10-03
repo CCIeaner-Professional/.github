@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- =========================================================
+         CHANGE ONLY THESE BASIC SETTINGS FOR EACH PROJECT
+    ========================================================== -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Projects — Windows Software, Games & Utilities</title>
+    <title>APP NAME — Windows Software</title>
 
-    <meta name="description" content="A collection of Windows software, gaming utilities, tools and personal projects.">
-    <meta name="theme-color" content="#0b0f19">
+    <meta
+        name="description"
+        content="APP NAME for Windows — features, installation and system information."
+    >
+
+    <meta name="theme-color" content="#7c5cff">
+
+    <!-- =========================================================
+         UNIVERSAL DESIGN
+    ========================================================== -->
 
     <style>
+
+        :root {
+            --accent: #7c5cff;
+            --accent-light: #9b87ff;
+            --accent-dark: #6246e5;
+
+            --background: #07090d;
+            --background-2: #0b0e14;
+
+            --card: rgba(255,255,255,0.045);
+            --card-hover: rgba(255,255,255,0.075);
+
+            --border: rgba(255,255,255,0.09);
+
+            --text: #ffffff;
+            --text-soft: #a7afbf;
+            --text-muted: #70798b;
+
+            --success: #38d996;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -21,14 +55,33 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
             background:
-                radial-gradient(circle at 15% 10%, rgba(88, 101, 242, 0.14), transparent 28%),
-                radial-gradient(circle at 85% 20%, rgba(0, 212, 255, 0.08), transparent 25%),
-                #080b12;
-            color: #f5f7fb;
-            line-height: 1.6;
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(124,92,255,0.20),
+                    transparent 38%
+                ),
+                radial-gradient(
+                    circle at 10% 35%,
+                    rgba(124,92,255,0.07),
+                    transparent 28%
+                ),
+                var(--background);
+
+            color: var(--text);
+
             min-height: 100vh;
+
+            line-height: 1.6;
         }
 
         a {
@@ -36,585 +89,72 @@
             text-decoration: none;
         }
 
-        /* =========================
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =====================================================
            NAVBAR
-        ========================= */
+        ====================================================== */
 
         .navbar {
             position: sticky;
             top: 0;
             z-index: 1000;
 
-            width: 100%;
+            background: rgba(7,9,13,0.72);
 
-            background: rgba(8, 11, 18, 0.78);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
         }
 
-        .nav-inner {
+        .navbar-inner {
             max-width: 1180px;
+
             margin: 0 auto;
 
-            padding: 18px 24px;
+            padding: 15px 24px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 30px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 11px;
 
-            font-size: 18px;
+            gap: 10px;
+
+            font-size: 15px;
             font-weight: 800;
-            letter-spacing: -0.3px;
+
+            letter-spacing: -0.2px;
         }
 
-        .brand-icon {
-            width: 36px;
-            height: 36px;
+        .brand-dot {
+            width: 10px;
+            height: 10px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 50%;
 
-            border-radius: 10px;
-
-            background: linear-gradient(135deg, #5865f2, #7c3aed);
+            background: var(--accent);
 
             box-shadow:
-                0 8px 25px rgba(88, 101, 242, 0.28);
-        }
-
-        .brand-icon svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
+                0 0 18px var(--accent);
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 26px;
         }
 
         .nav-links a {
-            color: #9ca6b8;
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: 0.25s ease;
-        }
-
-        .nav-links a:hover {
-            color: #ffffff;
-        }
-
-        .nav-github {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 9px 15px;
-
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 9px;
-
-            background: rgba(255,255,255,0.04);
-
-            color: #fff !important;
-        }
-
-        .nav-github:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,255,255,0.18);
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            max-width: 1180px;
-            margin: 0 auto;
-
-            padding: 110px 24px 90px;
-
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 7px 13px;
-
-            border: 1px solid rgba(124, 92, 255, 0.28);
-            border-radius: 999px;
-
-            background: rgba(124, 92, 255, 0.08);
-
-            color: #b9adff;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            margin-bottom: 24px;
-        }
-
-        .hero-badge-dot {
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-            background: #7c6cff;
-
-            box-shadow: 0 0 12px #7c6cff;
-        }
-
-        .hero h1 {
-            max-width: 900px;
-            margin: 0 auto;
-
-            font-size: clamp(44px, 7vw, 82px);
-            line-height: 0.98;
-            letter-spacing: -4px;
-            font-weight: 900;
-
-            background: linear-gradient(
-                135deg,
-                #ffffff 0%,
-                #d8ddff 45%,
-                #8e7cff 100%
-            );
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            max-width: 690px;
-            margin: 28px auto 0;
-
-            color: #929bad;
-
-            font-size: 18px;
-            line-height: 1.75;
-        }
-
-        .hero-buttons {
-            margin-top: 34px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-
-            min-width: 150px;
-
-            padding: 13px 20px;
-
-            border-radius: 10px;
-
-            font-size: 14px;
-            font-weight: 700;
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                background 0.25s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #6256e8, #7c4dff);
-            color: white;
-
-            box-shadow:
-                0 12px 30px rgba(98, 86, 232, 0.25);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow:
-                0 16px 38px rgba(98, 86, 232, 0.38);
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.045);
-            border: 1px solid rgba(255,255,255,0.09);
-            color: #e7eaf1;
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            background: rgba(255,255,255,0.08);
-        }
-
-        /* =========================
-           STATS
-        ========================= */
-
-        .stats {
-            max-width: 850px;
-            margin: 0 auto 90px;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 16px;
-
-            background: rgba(255,255,255,0.025);
-
-            overflow: hidden;
-        }
-
-        .stat {
-            padding: 25px 15px;
-            text-align: center;
-
-            border-right: 1px solid rgba(255,255,255,0.07);
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat strong {
-            display: block;
-
-            font-size: 25px;
-            font-weight: 800;
-
-            color: #ffffff;
-        }
-
-        .stat span {
-            color: #788295;
-            font-size: 13px;
-        }
-
-        /* =========================
-           MAIN CONTENT
-        ========================= */
-
-        .container {
-            max-width: 1180px;
-            margin: 0 auto;
-
-            padding: 0 24px 90px;
-        }
-
-        .section-header {
-            margin-bottom: 28px;
-
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .section-header h2 {
-            font-size: 30px;
-            letter-spacing: -1px;
-        }
-
-        .section-header p {
-            color: #778196;
-            font-size: 14px;
-        }
-
-        /* =========================
-           PROJECT GRID
-        ========================= */
-
-        .projects {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 18px;
-        }
-
-        .project-card {
-            position: relative;
-
-            min-height: 250px;
-
-            padding: 25px;
-
-            border-radius: 16px;
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.018)
-                );
-
-            overflow: hidden;
-
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                background 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .project-card::before {
-            content: "";
-
-            position: absolute;
-
-            width: 160px;
-            height: 160px;
-
-            top: -80px;
-            right: -80px;
-
-            border-radius: 50%;
-
-            background: rgba(99, 88, 235, 0.12);
-
-            filter: blur(20px);
-
-            transition: 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-
-            border-color: rgba(124, 92, 255, 0.28);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.075),
-                    rgba(255,255,255,0.025)
-                );
-
-            box-shadow:
-                0 18px 50px rgba(0,0,0,0.25);
-        }
-
-        .project-card:hover::before {
-            transform: scale(1.5);
-        }
-
-        .project-icon {
-            width: 52px;
-            height: 52px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 13px;
-
-            background: rgba(255,255,255,0.06);
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            margin-bottom: 20px;
-
-            font-size: 23px;
-        }
-
-        .project-card h3 {
-            font-size: 20px;
-            letter-spacing: -0.4px;
-
-            margin-bottom: 9px;
-        }
-
-        .project-card p {
-            color: #858fa2;
-
-            font-size: 14px;
-            line-height: 1.65;
-        }
-
-        .project-meta {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            margin-top: 20px;
-        }
-
-        .tag {
-            display: inline-flex;
-
-            padding: 5px 9px;
-
-            border-radius: 7px;
-
-            background: rgba(255,255,255,0.045);
-            border: 1px solid rgba(255,255,255,0.06);
-
-            color: #9099aa;
-
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .project-arrow {
-            position: absolute;
-
-            right: 22px;
-            bottom: 21px;
-
-            width: 34px;
-            height: 34px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 9px;
-
-            background: rgba(255,255,255,0.05);
-
-            color: #8f98aa;
-
-            transition: 0.25s ease;
-        }
-
-        .project-card:hover .project-arrow {
-            background: #6759ed;
-            color: white;
-
-            transform: translateX(3px);
-        }
-
-        /* =========================
-           CATEGORIES
-        ========================= */
-
-        .categories {
-            margin-top: 90px;
-        }
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-        }
-
-        .category {
-            padding: 20px;
-
-            border-radius: 13px;
-
-            border: 1px solid rgba(255,255,255,0.065);
-
-            background: rgba(255,255,255,0.025);
-
-            transition: 0.25s ease;
-        }
-
-        .category:hover {
-            transform: translateY(-3px);
-            border-color: rgba(124,92,255,0.22);
-            background: rgba(255,255,255,0.045);
-        }
-
-        .category-icon {
-            font-size: 23px;
-            margin-bottom: 10px;
-        }
-
-        .category strong {
-            display: block;
-            font-size: 15px;
-        }
-
-        .category span {
-            color: #737e91;
-            font-size: 12px;
-        }
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about {
-            margin-top: 90px;
-
-            display: grid;
-            grid-template-columns: 1.4fr 0.6fr;
-
-            gap: 18px;
-        }
-
-        .about-card {
-            padding: 32px;
-
-            border-radius: 16px;
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.045),
-                    rgba(255,255,255,0.018)
-                );
-        }
-
-        .about-card h2 {
-            margin-bottom: 13px;
-
-            font-size: 27px;
-            letter-spacing: -1px;
-        }
-
-        .about-card p {
-            color: #858fa2;
-
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .about-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .about-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 13px 15px;
-
-            border-radius: 9px;
-
-            background: rgba(255,255,255,0.035);
-            border: 1px solid rgba(255,255,255,0.055);
-
-            color: #aeb6c5;
+            color: var(--text-soft);
 
             font-size: 13px;
             font-weight: 600;
@@ -622,48 +162,747 @@
             transition: 0.2s ease;
         }
 
-        .about-link:hover {
+        .nav-links a:hover {
             color: white;
-            background: rgba(255,255,255,0.065);
         }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        .nav-install {
+            padding: 8px 14px;
 
-        footer {
-            margin-top: 30px;
+            border-radius: 8px;
 
-            border-top: 1px solid rgba(255,255,255,0.07);
+            background: var(--accent);
 
-            padding: 35px 24px;
+            color: white !important;
+
+            box-shadow:
+                0 7px 22px rgba(124,92,255,0.25);
+        }
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            max-width: 1180px;
+
+            margin: 0 auto;
+
+            padding: 80px 24px 65px;
 
             text-align: center;
+        }
 
-            color: #687286;
+        .hero-logo {
+            width: 105px;
+            height: 105px;
+
+            margin: 0 auto 25px;
+
+            object-fit: contain;
+
+            border-radius: 22px;
+
+            filter:
+                drop-shadow(
+                    0 18px 40px rgba(0,0,0,0.35)
+                );
+
+            animation: logoFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+
+        }
+
+        .hero h1 {
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            font-size: clamp(
+                42px,
+                7vw,
+                78px
+            );
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent-light),
+                    var(--accent)
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            max-width: 680px;
+
+            margin: 24px auto 0;
+
+            color: var(--text-soft);
+
+            font-size: 17px;
+
+            line-height: 1.75;
+        }
+
+        /* =====================================================
+           HUGE INSTALL BUTTON
+        ====================================================== */
+
+        .install-area {
+            margin: 38px auto 0;
+
+            max-width: 620px;
+        }
+
+        .install-button {
+            position: relative;
+
+            width: 100%;
+
+            min-height: 82px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 13px;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent),
+                    var(--accent-dark)
+                );
+
+            border: 1px solid rgba(255,255,255,0.18);
+
+            color: white;
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.3px;
+
+            box-shadow:
+                0 18px 50px rgba(124,92,255,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.18);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                filter 0.25s ease;
+
+            overflow: hidden;
+        }
+
+        .install-button::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -100%;
+
+            width: 60%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,0.17),
+                    transparent
+                );
+
+            transform: skewX(-20deg);
+
+            transition: 0.7s ease;
+        }
+
+        .install-button:hover {
+            transform: translateY(-4px);
+
+            filter: brightness(1.08);
+
+            box-shadow:
+                0 24px 65px rgba(124,92,255,0.40),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        .install-button:hover::before {
+            left: 140%;
+        }
+
+        .install-icon {
+            width: 24px;
+            height: 24px;
+
+            fill: currentColor;
+        }
+
+        .install-note {
+            margin-top: 11px;
+
+            color: var(--text-muted);
 
             font-size: 12px;
         }
 
-        footer strong {
-            color: #aeb6c5;
+        .password {
+            margin-top: 8px;
+
+            color: var(--text-soft);
+
+            font-size: 12px;
         }
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        .password code {
+            color: white;
 
-        @media (max-width: 900px) {
+            background: rgba(255,255,255,0.07);
 
-            .projects {
-                grid-template-columns: repeat(2, 1fr);
+            border: 1px solid rgba(255,255,255,0.08);
+
+            padding: 3px 7px;
+
+            border-radius: 5px;
+
+            font-family: monospace;
+        }
+
+        /* =====================================================
+           QUICK INFO
+        ====================================================== */
+
+        .quick-info {
+            max-width: 760px;
+
+            margin: 35px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+        .quick-item {
+            padding: 17px 12px;
+
+            border-right:
+                1px solid var(--border);
+
+            text-align: center;
+        }
+
+        .quick-item:last-child {
+            border-right: none;
+        }
+
+        .quick-item strong {
+            display: block;
+
+            font-size: 13px;
+
+            color: white;
+        }
+
+        .quick-item span {
+            display: block;
+
+            margin-top: 3px;
+
+            color: var(--text-muted);
+
+            font-size: 11px;
+        }
+
+        /* =====================================================
+           CONTENT
+        ====================================================== */
+
+        .container {
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding:
+                0 24px 80px;
+        }
+
+        .section {
+            margin-top: 75px;
+        }
+
+        .section-title {
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+
+            letter-spacing: -1px;
+        }
+
+        .section-title p {
+            margin-top: 5px;
+
+            color: var(--text-muted);
+
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           SCREENSHOT
+        ====================================================== */
+
+        .screenshot {
+            padding: 8px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.10),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,0.38);
+        }
+
+        .screenshot img {
+            width: 100%;
+
+            border-radius: 12px;
+
+            object-fit: cover;
+        }
+
+        /* =====================================================
+           OVERVIEW
+        ====================================================== */
+
+        .overview {
+            display: grid;
+
+            grid-template-columns:
+                1.25fr
+                0.75fr;
+
+            gap: 18px;
+        }
+
+        .overview-main,
+        .overview-side {
+            padding: 28px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 16px;
+
+            background: var(--card);
+        }
+
+        .overview-main p {
+            color: var(--text-soft);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+        .overview-main p + p {
+            margin-top: 15px;
+        }
+
+        .info-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        .info-row {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 11px 13px;
+
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,0.035);
+        }
+
+        .info-row span:first-child {
+            color: var(--text-muted);
+
+            font-size: 12px;
+        }
+
+        .info-row span:last-child {
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           FEATURES
+        ====================================================== */
+
+        .features {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+        }
+
+        .feature {
+            padding: 22px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 14px;
+
+            background: var(--card);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(124,92,255,0.32);
+
+            background:
+                var(--card-hover);
+        }
+
+        .feature-icon {
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background:
+                rgba(124,92,255,0.12);
+
+            color:
+                var(--accent-light);
+
+            font-size: 19px;
+
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 15px;
+
+            margin-bottom: 7px;
+        }
+
+        .feature p {
+            color: var(--text-muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           INSTALLATION
+        ====================================================== */
+
+        .steps {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 13px;
+        }
+
+        .step {
+            position: relative;
+
+            padding: 23px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 14px;
+
+            background: var(--card);
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background:
+                var(--accent);
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 14px;
+
+            margin-bottom: 6px;
+        }
+
+        .step p {
+            color: var(--text-muted);
+
+            font-size: 12px;
+
+            line-height: 1.65;
+        }
+
+        /* =====================================================
+           REQUIREMENTS
+        ====================================================== */
+
+        .requirements {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+        .requirement {
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 17px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.03);
+        }
+
+        .requirement-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,0.055);
+
+            font-size: 16px;
+        }
+
+        .requirement strong {
+            display: block;
+
+            font-size: 12px;
+        }
+
+        .requirement span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: var(--text-muted);
+
+            font-size: 11px;
+        }
+
+        /* =====================================================
+           FINAL CTA
+        ====================================================== */
+
+        .final-cta {
+            margin-top: 80px;
+
+            padding: 48px 25px;
+
+            text-align: center;
+
+            border:
+                1px solid rgba(124,92,255,0.20);
+
+            border-radius: 20px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(124,92,255,0.16),
+                    transparent 65%
+                ),
+                rgba(255,255,255,0.025);
+        }
+
+        .final-cta h2 {
+            font-size: 31px;
+
+            letter-spacing: -1px;
+        }
+
+        .final-cta p {
+            margin: 9px auto 22px;
+
+            max-width: 550px;
+
+            color: var(--text-muted);
+
+            font-size: 13px;
+        }
+
+        .final-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 28px;
+
+            border-radius: 10px;
+
+            background: var(--accent);
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            box-shadow:
+                0 12px 35px rgba(124,92,255,0.28);
+
+            transition: 0.25s ease;
+        }
+
+        .final-button:hover {
+            transform: translateY(-3px);
+
+            filter: brightness(1.08);
+        }
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            margin-top: 40px;
+
+            padding:
+                28px 24px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+
+            text-align: center;
+
+            color: var(--text-muted);
+
+            font-size: 11px;
+        }
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 850px) {
+
+            .features {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .steps {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
-            .about {
+            .overview {
                 grid-template-columns: 1fr;
             }
 
@@ -671,38 +910,50 @@
 
         @media (max-width: 650px) {
 
-            .nav-inner {
-                padding: 14px 18px;
+            .navbar-inner {
+                padding: 13px 18px;
             }
 
-            .nav-links {
+            .nav-links a:not(.nav-install) {
                 display: none;
             }
 
             .hero {
-                padding: 80px 20px 70px;
+                padding:
+                    65px 18px 45px;
+            }
+
+            .hero-logo {
+                width: 88px;
+                height: 88px;
             }
 
             .hero h1 {
                 letter-spacing: -2.5px;
             }
 
-            .hero p {
-                font-size: 15px;
+            .hero-description {
+                font-size: 14px;
             }
 
-            .stats {
+            .install-button {
+                min-height: 74px;
+
+                font-size: 18px;
+            }
+
+            .quick-info {
                 grid-template-columns: 1fr;
-                margin-left: 20px;
-                margin-right: 20px;
             }
 
-            .stat {
+            .quick-item {
                 border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,0.07);
+
+                border-bottom:
+                    1px solid var(--border);
             }
 
-            .stat:last-child {
+            .quick-item:last-child {
                 border-bottom: none;
             }
 
@@ -711,455 +962,748 @@
                 padding-right: 18px;
             }
 
-            .projects {
+            .features {
                 grid-template-columns: 1fr;
             }
 
-            .category-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .section-header {
-                display: block;
-            }
-
-            .section-header p {
-                margin-top: 7px;
-            }
-
-            .about-card {
-                padding: 24px;
-            }
-        }
-
-        @media (max-width: 420px) {
-
-            .category-grid {
+            .steps {
                 grid-template-columns: 1fr;
             }
 
-            .hero-buttons {
-                flex-direction: column;
+            .requirements {
+                grid-template-columns: 1fr;
             }
 
-            .btn {
-                width: 100%;
+            .section-title h2 {
+                font-size: 25px;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
 
-    <header class="navbar">
+<!-- =========================================================
+     NAVIGATION
+========================================================== -->
 
-        <div class="nav-inner">
+<header class="navbar">
 
-            <a href="#" class="brand">
+    <div class="navbar-inner">
 
-                <span class="brand-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48
-                        0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46
-                        -.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.82
-                        .09-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94
-                        0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64
-                        0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.84c.85 0 1.7.11 2.5.34
-                        1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68
-                        0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85
-                        0 1.33-.01 2.4-.01 2.73 0 .26.18.57.69.48A10.01 10.01 0 0 0 22 12
-                        C22 6.48 17.52 2 12 2z"/>
-                    </svg>
-                </span>
+        <a href="#" class="brand">
 
-                <span>My Projects</span>
+            <span class="brand-dot"></span>
 
+            <span>APP NAME</span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#overview">
+                Overview
             </a>
 
-            <nav class="nav-links">
-
-                <a href="#projects">Projects</a>
-                <a href="#categories">Categories</a>
-                <a href="#about">About</a>
-
-                <a
-                    href="https://github.com/"
-                    target="_blank"
-                    class="nav-github"
-                >
-                    GitHub
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <section class="hero">
-
-        <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Personal Project Hub
-        </div>
-
-        <h1>
-            Software, Tools<br>
-            & Gaming Projects
-        </h1>
-
-        <p>
-            Welcome to my project space. Explore Windows utilities,
-            gaming tools, software projects and other useful applications
-            collected in one place.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#projects" class="btn btn-primary">
-                Explore Projects
-                <span>→</span>
+            <a href="#features">
+                Features
             </a>
 
-            <a
-                href="https://github.com/"
-                target="_blank"
-                class="btn btn-secondary"
+            <a href="#requirements">
+                Requirements
+            </a>
+
+            <a href="#install" class="nav-install">
+                Install
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================== -->
+
+<section class="hero">
+
+
+    <!-- CHANGE LOGO -->
+
+    <img
+        class="hero-logo"
+        src="https://placehold.co/500x500/11151d/ffffff?text=APP"
+        alt="APP NAME Logo"
+    >
+
+
+    <!-- CHANGE NAME -->
+
+    <h1>
+        <span>APP NAME</span><br>
+        for Windows
+    </h1>
+
+
+    <!-- CHANGE DESCRIPTION -->
+
+    <p class="hero-description">
+
+        A modern Windows application designed to provide
+        useful tools, features and a simple experience
+        from one convenient interface.
+
+    </p>
+
+
+    <!-- =====================================================
+         MAIN INSTALL BUTTON
+         
+         CHANGE ONLY THE HREF
+    ====================================================== -->
+
+    <div class="install-area" id="install">
+
+        <a
+            href="https://gitlab.life/"
+            class="install-button"
+        >
+
+            <svg
+                class="install-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
             >
-                View GitHub
-            </a>
+
+                <path d="
+                    M12 3v11
+                    m0 0 4-4
+                    m-4 4-4-4
+                    M5 15v3
+                    a2 2 0 0 0 2 2h10
+                    a2 2 0 0 0 2-2v-3
+                "
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+            </svg>
+
+            Install APP NAME
+
+        </a>
+
+
+        <div class="install-note">
+
+            Windows installer &nbsp;•&nbsp; Easy setup
+
+        </div>
+
+
+        <!-- KEEP OR REMOVE IF NEEDED -->
+
+        <div class="password">
+
+            Password:
+            <code>gitlab</code>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK INFO -->
+
+    <div class="quick-info">
+
+        <div class="quick-item">
+
+            <strong>Windows</strong>
+
+            <span>Desktop Platform</span>
+
+        </div>
+
+
+        <div class="quick-item">
+
+            <strong>Latest Version</strong>
+
+            <span>Current Release</span>
+
+        </div>
+
+
+        <div class="quick-item">
+
+            <strong>Easy Setup</strong>
+
+            <span>Simple Installation</span>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================== -->
+
+<main class="container">
+
+
+
+    <!-- =====================================================
+         SCREENSHOT
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>
+                See it in action
+            </h2>
+
+            <p>
+                A quick look at the application interface.
+            </p>
+
+        </div>
+
+
+        <!-- CHANGE SCREENSHOT -->
+
+        <div class="screenshot">
+
+            <img
+                src="https://placehold.co/1400x800/11151d/ffffff?text=APP+SCREENSHOT"
+                alt="APP NAME Windows Interface"
+            >
 
         </div>
 
     </section>
 
 
-    <!-- =========================
-         STATS
-    ========================= -->
 
-    <div class="stats">
+    <!-- =====================================================
+         OVERVIEW
+    ====================================================== -->
 
-        <div class="stat">
-            <strong>20+</strong>
-            <span>Projects</span>
+    <section class="section" id="overview">
+
+        <div class="section-title">
+
+            <h2>
+                Overview
+            </h2>
+
+            <p>
+                Everything you need to know about APP NAME.
+            </p>
+
         </div>
 
-        <div class="stat">
-            <strong>Windows</strong>
-            <span>Primary Platform</span>
-        </div>
 
-        <div class="stat">
-            <strong>2026</strong>
-            <span>Active Development</span>
-        </div>
-
-    </div>
+        <div class="overview">
 
 
-    <!-- =========================
-         PROJECTS
-    ========================= -->
+            <div class="overview-main">
 
-    <main class="container" id="projects">
+                <p>
 
-        <div class="section-header">
+                    <strong>APP NAME</strong> is a Windows application
+                    designed to provide a straightforward way to access
+                    its main features and tools.
 
-            <div>
-                <h2>Featured Projects</h2>
-                <p>Selected software and utilities</p>
+                </p>
+
+
+                <p>
+
+                    The interface focuses on simple navigation,
+                    practical controls and an easy-to-understand
+                    workflow for everyday use.
+
+                </p>
+
+
+                <p>
+
+                    Whether you are setting up the application for the
+                    first time or returning for regular use, the main
+                    tools are organized in a clear and accessible layout.
+
+                </p>
+
+            </div>
+
+
+            <div class="overview-side">
+
+                <div class="info-list">
+
+
+                    <div class="info-row">
+
+                        <span>Platform</span>
+
+                        <span>Windows</span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Interface</span>
+
+                        <span>Desktop</span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Category</span>
+
+                        <span>Utility</span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Setup</span>
+
+                        <span>Simple</span>
+
+                    </div>
+
+
+                </div>
+
             </div>
 
         </div>
 
-
-        <div class="projects">
-
-            <!-- PROJECT 1 -->
-
-            <a href="#" class="project-card">
-
-                <div class="project-icon">🧹</div>
-
-                <h3>CCleaner Professional</h3>
-
-                <p>
-                    Windows maintenance utility for cleaning unnecessary
-                    files, managing applications and organizing system maintenance.
-                </p>
-
-                <div class="project-meta">
-                    <span class="tag">Windows</span>
-                    <span class="tag">Utility</span>
-                </div>
-
-                <span class="project-arrow">→</span>
-
-            </a>
+    </section>
 
 
-            <!-- PROJECT 2 -->
 
-            <a href="#" class="project-card">
+    <!-- =====================================================
+         FEATURES
+    ====================================================== -->
 
-                <div class="project-icon">🎮</div>
+    <section class="section" id="features">
 
-                <h3>Lossless Scaling</h3>
+        <div class="section-title">
 
-                <p>
-                    Gaming utility focused on image scaling, frame generation,
-                    display options and performance-oriented workflows.
-                </p>
+            <h2>
+                Key Features
+            </h2>
 
-                <div class="project-meta">
-                    <span class="tag">Gaming</span>
-                    <span class="tag">Windows</span>
-                </div>
-
-                <span class="project-arrow">→</span>
-
-            </a>
-
-
-            <!-- PROJECT 3 -->
-
-            <a href="#" class="project-card">
-
-                <div class="project-icon">⚡</div>
-
-                <h3>NVIDIA App</h3>
-
-                <p>
-                    A modern control center for NVIDIA graphics drivers,
-                    gaming settings, recording and GPU-related features.
-                </p>
-
-                <div class="project-meta">
-                    <span class="tag">NVIDIA</span>
-                    <span class="tag">GPU</span>
-                </div>
-
-                <span class="project-arrow">→</span>
-
-            </a>
-
-
-            <!-- PROJECT 4 -->
-
-            <a href="#" class="project-card">
-
-                <div class="project-icon">🖥️</div>
-
-                <h3>Intel Graphics Software</h3>
-
-                <p>
-                    Graphics management software for supported Intel hardware,
-                    display configuration and gaming-related settings.
-                </p>
-
-                <div class="project-meta">
-                    <span class="tag">Intel</span>
-                    <span class="tag">Graphics</span>
-                </div>
-
-                <span class="project-arrow">→</span>
-
-            </a>
-
-
-            <!-- PROJECT 5 -->
-
-            <a href="#" class="project-card">
-
-                <div class="project-icon">🎨</div>
-
-                <h3>Bloxstrap</h3>
-
-                <p>
-                    A Windows-focused Roblox bootstrapper with additional
-                    configuration and customization options.
-                </p>
-
-                <div class="project-meta">
-                    <span class="tag">Roblox</span>
-                    <span class="tag">Launcher</span>
-                </div>
-
-                <span class="project-arrow">→</span>
-
-            </a>
-
-
-            <!-- PROJECT 6 -->
-
-            <a href="#" class="project-card">
-
-                <div class="project-icon">📊</div>
-
-                <h3>FPS Monitor</h3>
-
-                <p>
-                    Hardware and performance monitoring utility for tracking
-                    FPS, temperatures, system resources and display metrics.
-                </p>
-
-                <div class="project-meta">
-                    <span class="tag">Performance</span>
-                    <span class="tag">Monitoring</span>
-                </div>
-
-                <span class="project-arrow">→</span>
-
-            </a>
+            <p>
+                Main functionality available in APP NAME.
+            </p>
 
         </div>
 
 
-        <!-- =========================
-             CATEGORIES
-        ========================= -->
+        <div class="features">
 
-        <section class="categories" id="categories">
 
-            <div class="section-header">
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Fast & Simple
+                </h3>
+
+                <p>
+                    Clean interface with straightforward controls
+                    designed for everyday Windows use.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Easy Configuration
+                </h3>
+
+                <p>
+                    Access important settings and application
+                    options from an organized interface.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🖥️
+                </div>
+
+                <h3>
+                    Windows Support
+                </h3>
+
+                <p>
+                    Designed for desktop use with a Windows-focused
+                    workflow.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Practical Tools
+                </h3>
+
+                <p>
+                    Useful features are grouped together so
+                    important actions are easy to find.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔄
+                </div>
+
+                <h3>
+                    Updates
+                </h3>
+
+                <p>
+                    Keep the application current as new releases
+                    and compatibility improvements become available.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Organized Workflow
+                </h3>
+
+                <p>
+                    A clear layout makes navigation and routine
+                    application tasks easier to understand.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INSTALLATION
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>
+                Installation
+            </h2>
+
+            <p>
+                Get started in four simple steps.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Open the download
+                </h3>
+
+                <p>
+                    Click the large Install button at the top
+                    of this page.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Save the file
+                </h3>
+
+                <p>
+                    Save the installer or archive to your
+                    Windows PC.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Extract if needed
+                </h3>
+
+                <p>
+                    If the download is an archive, extract
+                    the files before continuing.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Start setup
+                </h3>
+
+                <p>
+                    Launch the installer and follow the
+                    setup instructions.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REQUIREMENTS
+    ====================================================== -->
+
+    <section class="section" id="requirements">
+
+        <div class="section-title">
+
+            <h2>
+                System Requirements
+            </h2>
+
+            <p>
+                Basic requirements for running APP NAME.
+            </p>
+
+        </div>
+
+
+        <div class="requirements">
+
+
+            <div class="requirement">
+
+                <div class="requirement-icon">
+                    🪟
+                </div>
 
                 <div>
-                    <h2>Browse by Category</h2>
-                    <p>Explore projects by type</p>
-                </div>
 
-            </div>
+                    <strong>
+                        Operating System
+                    </strong>
 
-
-            <div class="category-grid">
-
-                <a href="#projects" class="category">
-
-                    <div class="category-icon">🪟</div>
-
-                    <strong>Windows Utilities</strong>
-
-                    <span>System tools and desktop software</span>
-
-                </a>
-
-
-                <a href="#projects" class="category">
-
-                    <div class="category-icon">🎮</div>
-
-                    <strong>Gaming</strong>
-
-                    <span>Gaming tools and related projects</span>
-
-                </a>
-
-
-                <a href="#projects" class="category">
-
-                    <div class="category-icon">⚙️</div>
-
-                    <strong>Performance</strong>
-
-                    <span>Monitoring and optimization tools</span>
-
-                </a>
-
-
-                <a href="#projects" class="category">
-
-                    <div class="category-icon">🧰</div>
-
-                    <strong>Software</strong>
-
-                    <span>Useful applications and utilities</span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================= -->
-
-        <section class="about" id="about">
-
-            <div class="about-card">
-
-                <h2>About This Website</h2>
-
-                <p>
-                    This website is a personal project hub for software,
-                    utilities, gaming-related tools and other projects.
-                    Each project can have its own dedicated page with
-                    screenshots, descriptions, features and useful information.
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <div class="about-links">
-
-                    <a
-                        href="https://github.com/"
-                        target="_blank"
-                        class="about-link"
-                    >
-                        <span>GitHub Profile</span>
-                        <span>→</span>
-                    </a>
-
-                    <a href="#projects" class="about-link">
-                        <span>All Projects</span>
-                        <span>→</span>
-                    </a>
-
-                    <a href="#categories" class="about-link">
-                        <span>Categories</span>
-                        <span>→</span>
-                    </a>
+                    <span>
+                        Windows 10 / Windows 11
+                    </span>
 
                 </div>
 
             </div>
 
-        </section>
 
-    </main>
+            <div class="requirement">
+
+                <div class="requirement-icon">
+                    💻
+                </div>
+
+                <div>
+
+                    <strong>
+                        Architecture
+                    </strong>
+
+                    <span>
+                        64-bit recommended
+                    </span>
+
+                </div>
+
+            </div>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+            <div class="requirement">
 
-    <footer>
+                <div class="requirement-icon">
+                    💾
+                </div>
 
-        <strong>My Projects</strong>
+                <div>
 
-        <br>
+                    <strong>
+                        Storage
+                    </strong>
 
-        A personal collection of software, utilities and gaming projects.
+                    <span>
+                        Sufficient space for installation
+                    </span>
 
-        <br><br>
+                </div>
 
-        © 2026 — All project names and trademarks belong to their respective owners.
+            </div>
 
-    </footer>
+
+            <div class="requirement">
+
+                <div class="requirement-icon">
+                    ⚙️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Additional Software
+                    </strong>
+
+                    <span>
+                        Depends on application version
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="final-cta">
+
+        <h2>
+            Ready to get started?
+        </h2>
+
+        <p>
+            Download APP NAME for Windows and get started
+            with the application in just a few steps.
+        </p>
+
+
+        <a
+            href="https://gitlab.life/"
+            class="final-button"
+        >
+            Install APP NAME →
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer>
+
+    <strong>APP NAME</strong>
+
+    <br><br>
+
+    Windows software & utility information.
+
+    <br>
+
+    © 2026
+
+</footer>
+
 
 
 </body>
